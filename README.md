@@ -1,30 +1,48 @@
-# Ecommerce Store API
+# Ecommerce Store
 
 This is a full-stack implementation for an ecommerce store with a specific discount system.
+
+## Project Structure
+
+```
+ecommerce-store/
+├── backend/          # Express.js API server
+│   ├── src/
+│   ├── tests/
+│   └── package.json
+├── frontend/         # React + Vite application
+│   ├── src/
+│   └── package.json
+└── package.json      # Root package.json with convenience scripts
+```
 
 ## Setup
 
 1.  **Install Dependencies**:
     ```bash
-    npm install
-    cd frontend && npm install && cd ..
+    npm run install:all
+    ```
+    Or install separately:
+    ```bash
+    cd backend && npm install
+    cd ../frontend && npm install
     ```
 
-2.  **Build Frontend** (optional, already built):
+2.  **Run Backend** (Development):
     ```bash
-    cd frontend && npm run build && cd ..
+    npm run dev:backend
     ```
+    The backend API runs on http://localhost:3000.
 
-3.  **Run Server**:
+3.  **Run Frontend** (Development):
     ```bash
-    npm run start
+    npm run dev:frontend
     ```
-    The server runs on http://localhost:3000.
-    The frontend UI is available at http://localhost:3000.
+    The frontend UI will be available at http://localhost:5173 (or the port Vite assigns).
 
 4.  **Run Tests**:
     ```bash
-    npm test
+    npm run test:backend
     ```
 
 ## Features
