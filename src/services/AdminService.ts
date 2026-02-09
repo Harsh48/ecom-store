@@ -5,12 +5,11 @@ import { StoreStats } from '../models/types';
 export class AdminService {
 
     public generateDiscountCode(): string | null {
-        // Check if condition is met based on *current* order count
         if (discountService.isNthOrder(store.orderCount)) {
             const newDiscount = discountService.createDiscountCode();
             return newDiscount ? newDiscount.code : null;
         }
-        return null; // Condition not met
+        return null;
     }
 
     public getStats(): StoreStats {

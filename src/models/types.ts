@@ -27,13 +27,13 @@ export interface Order {
 
 export interface DiscountCode {
     code: string;
-    percent: number; // e.g. 10 for 10%
+    percent: number;
     isUsed: boolean;
 }
 
 export interface StoreStats {
     totalItemsPurchased: number;
     totalRevenue: number;
-    totalDiscountCodesGenerated: number; // Or active?
+    totalDiscountCodesGenerated: number;
     totalDiscountAmountGiven: number;
 }

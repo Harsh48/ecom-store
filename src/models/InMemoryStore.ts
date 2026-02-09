@@ -1,26 +1,15 @@
 import { Product, Cart, Order, DiscountCode, StoreStats } from './types';
 
 export class InMemoryStore {
-    // Catalogue
     public products: Map<string, Product> = new Map();
-
-    // User Carts (UserId -> Cart)
     public carts: Map<string, Cart> = new Map();
-
-    // Orders
     public orders: Order[] = [];
-
-    // Discount Codes (Code -> Details)
-    // We store ALL generated codes to validate them.
     public discountCodes: Map<string, DiscountCode> = new Map();
-
-    // System State
     public orderCount: number = 0;
 
-    // Config
     public discountConfig = {
-        n: 3, // Every 3rd order gets a discount
-        percent: 10 // 10% discount
+        n: 3,
+        percent: 10
     };
 
     constructor() {
@@ -34,13 +23,11 @@ export class InMemoryStore {
         this.products.set('p4', { id: 'p4', name: 'Monitor', price: 300 });
     }
 
-    // Helper to clear data (useful for tests)
     public clear() {
         this.carts.clear();
         this.orders = [];
         this.discountCodes.clear();
         this.orderCount = 0;
-        // Don't clear products
     }
 }
 
