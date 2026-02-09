@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 
 app.use('/api', apiRoutes);
 
-// Serves static files from the 'frontend/dist' directory
 app.use(express.static('frontend/dist'));
 
 app.get('/health', (req, res) => {
